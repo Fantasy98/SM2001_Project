@@ -15,3 +15,4 @@ Neural networks models/trained_nn_models/MLP5_t1000.h5
 Data generator (Moehlis model)\moehlis_data_1000.mat
 Data generator (Moehlis model)/moehlis_data_1000.mat
 Visualizing Data
+__pycache__
