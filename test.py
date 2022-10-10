@@ -9,9 +9,9 @@ DATA  = FILE["data"]
 a_ = DATA[0,:,:].astype("float32")
 #%%
 import Visualize_fields 
-Visualize_fields.visualize_fields(a_,410,510)
+Visualize_fields.visualize_fields(a_,400,410)
 
 
 # %%
-Make_gif.Draw_gif(410,510)
+Make_gif.Draw_gif(400,410)
 # %%

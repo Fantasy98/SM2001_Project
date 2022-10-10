@@ -79,3 +79,27 @@ def visualize_fields(a_,start_t,end_t):
     # plt.show()
         plt.close(fig)
 # %%
+def Velocity_Mean_Profile(a_):
+    # for t in np.arange(start_t,end_t):
+        a = a_[:,:]
+
+        # velocity compoments
+        ux = a[0]*v.u1x + a[1]*v.u2x + a[5]*v.u6x + a[6]*v.u7x + a[7]*v.u8x + a[8]*v.u9x
+        uy = a[2]*v.u3y + a[7]*v.u8y
+        uz = a[2]*v.u3z + a[3]*v.u4z + a[4]*v.u5z + a[5]*v.u6z + a[6]*v.u7z + a[7]*v.u8z
+       
+
+        # Average velocity in x-direction (down stream)
+        ux_avg = np.reshape(np.mean(ux,axis=0),(v.ny,v.nz))
+        uy_avg = np.reshape(np.mean(uy,axis=0),(v.ny,v.nz))
+        uz_avg = np.reshape(np.mean(uz,axis=0),(v.ny,v.nz))
+       
+        # velocities at mid plane
+        ce = np.ceil(v.ny//2)
+        ce = np.int64(ce)
+   
+        ux_mid = np.reshape( ux[:,ce,:],(v.nx,v.nz) )
+        uy_mid = np.reshape( uy[:,ce,:],(v.nx,v.nz) )
+        uz_mid = np.reshape( uz[:,ce,:],(v.nx,v.nz) )
+        
+        return ux_avg,uy_avg,uz_avg

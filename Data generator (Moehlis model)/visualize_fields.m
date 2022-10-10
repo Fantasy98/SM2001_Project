@@ -13,8 +13,8 @@ function visualize_fields(a_)
 %%
 
 % Visualization start and end time
-start_t = 404;
-end_t = start_t+60;
+start_t = 400;
+end_t = start_t+10;
 
 % Size of the domain
 Lx = 4*pi;
